@@ -5,15 +5,20 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Bergama Taksi - Geç Taksi</title>
 <style>
+  html, body {
+    height: 100%;
+    margin: 0;
+  }
+
   body {
     font-family: Arial, sans-serif;
     background: white;
-    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* dikey ortala */
+    align-items: center;    /* yatay ortala */
     padding: 20px;
     text-align: center;
-    transform: scale(0.9);
-    transform-origin: top left;
-    margin-left: -10vw; /* Sayfayı sola iki kez kaydırdık */
   }
 
   h1 {
