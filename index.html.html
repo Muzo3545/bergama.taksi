@@ -69,12 +69,14 @@
     background-color: #1ebe5d;
   }
 
-  .map-link {
-    margin-top: 15px;
-    font-size: 18px;
-    color: #000;
-    text-decoration: underline;
-    cursor: pointer;
+  .map-button {
+    background-color: #007BFF;
+    color: white;
+    border: none;
+  }
+
+  .map-button:hover {
+    background-color: #0056b3;
   }
 
   .info-text {
@@ -117,8 +119,8 @@
 
   .vehicle-photo {
     flex: 0 0 auto;
-    width: 270px;  /* 3 kat artırıldı */
-    height: 270px; /* 3 kat artırıldı */
+    width: 270px;
+    height: 270px;
     border-radius: 10px;
     border: 2px solid #ccc;
     background-size: cover;
@@ -166,7 +168,18 @@
 
 <a href="tel:+905392742977" class="button phone-button">📞 0539 274 29 77</a>
 <a href="https://wa.me/905392742977" target="_blank" class="button whatsapp-button">💬 WhatsApp ile Ara</a>
-<a href="https://maps.app.goo.gl/Q3y9ASc3f2QeBKLY7" target="_blank" class="map-link">📍 Konumumuzu Gör</a>
+<a href="https://maps.app.goo.gl/Q3y9ASc3f2QeBKLY7" target="_blank" class="button map-button">📍 Konumumuzu Gör</a>
+
+<!-- Fotoğraf galerisi açıklama yazısından önce -->
+<div class="vehicles-section">
+  <h2>Aracımız</h2>
+  <div class="vehicles-gallery">
+    <div class="vehicle-photo" style="background-image: url('taksi1.jpg');" data-img="taksi1.jpg"></div>
+    <div class="vehicle-photo" style="background-image: url('taksi2.jpg');" data-img="taksi2.jpg"></div>
+    <div class="vehicle-photo" style="background-image: url('taksi3.jpg');" data-img="taksi3.jpg"></div>
+    <div class="vehicle-photo" style="background-image: url('taksi4.jpg');" data-img="taksi4.jpg"></div>
+  </div>
+</div>
 
 <div class="info-text">
   <h2>Bergama Taksi – 7/24 Güvenli ve Hızlı Ulaşım 🚖</h2>
@@ -181,16 +194,6 @@
   </ul>
   <p>📲 Hemen WhatsApp üzerinden veya telefonla ulaşarak hızlıca taksi çağırabilirsiniz.</p>
   <p>“Bergama Taksi” denildiğinde güven, hız ve müşteri memnuniyeti akla gelir.</p>
-</div>
-
-<div class="vehicles-section">
-  <h2>Aracımız</h2>
-  <div class="vehicles-gallery">
-    <div class="vehicle-photo" style="background-image: url('taksi1.jpg');" data-img="taksi1.jpg"></div>
-    <div class="vehicle-photo" style="background-image: url('taksi2.jpg');" data-img="taksi2.jpg"></div>
-    <div class="vehicle-photo" style="background-image: url('taksi3.jpg');" data-img="taksi3.jpg"></div>
-    <div class="vehicle-photo" style="background-image: url('taksi4.jpg');" data-img="taksi4.jpg"></div>
-  </div>
 </div>
 
 <footer>© 2025 Bergama Taksi - Geç Taksi</footer>
