@@ -2,104 +2,161 @@
 <html lang="tr">
 <head>
 <meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 <title>Bergama Taksi - Geç Taksi</title>
 <style>
-  body {
+  * {
+    box-sizing: border-box;
+  }
+
+  body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
     font-family: Arial, sans-serif;
     background: white;
-    margin: 0;
+    color: #333;
+  }
+
+  body {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
     padding: 20px;
-    text-align: center;
-    transform: scale(0.9);
-    transform-origin: top center;
+    min-height: 100vh;
   }
 
   h1 {
-    font-size: 36px;
-    color: #333;
+    font-size: 28px;
+    font-weight: bold;
     margin-bottom: 20px;
+    text-align: center;
   }
 
   .button {
-    display: block;
-    width: 350px;
-    margin: 10px auto;
-    padding: 20px;
-    font-size: 24px;
-    font-weight: bold;
-    border-radius: 8px;
+    width: 90vw;
+    max-width: 400px;
+    padding: 18px 0;
+    margin: 10px 0;
+    font-size: 22px;
+    font-weight: 700;
+    border-radius: 10px;
+    text-align: center;
     text-decoration: none;
-    transition: 0.3s;
+    display: inline-block;
     cursor: pointer;
+    transition: background-color 0.3s ease;
   }
 
   .phone-button {
-    background: #FFD700;
+    background-color: #FFD700;
     color: black;
+    border: none;
   }
 
   .phone-button:hover {
-    background: #FFA500;
+    background-color: #e6c200;
   }
 
   .whatsapp-button {
-    background: #25D366;
+    background-color: #25D366;
     color: white;
+    border: none;
   }
 
   .whatsapp-button:hover {
-    background: #1ebe5d;
+    background-color: #1ebe5d;
   }
 
   .map-link {
-    display: block;
-    margin-top: 10px;
+    margin-top: 15px;
     font-size: 18px;
-    color: black;
-    text-decoration: none;
-  }
-
-  .map-link:hover {
+    color: #000;
     text-decoration: underline;
+    cursor: pointer;
   }
 
   .info-text {
-    max-width: 600px;
-    margin: 40px auto;
+    max-width: 400px;
+    font-size: 16px;
+    line-height: 1.5;
+    margin: 30px 0;
     text-align: left;
-    font-size: 18px;
-    line-height: 1.6;
-    color: #333;
+  }
+
+  .info-text h2 {
+    font-size: 20px;
+    margin-bottom: 12px;
+  }
+
+  .info-text ul {
+    padding-left: 20px;
   }
 
   .vehicles-section {
-    margin-top: 40px;
+    width: 100%;
+    max-width: 400px;
+    margin-top: 20px;
+  }
+
+  .vehicles-section h2 {
+    font-size: 20px;
+    margin-bottom: 12px;
+    text-align: center;
   }
 
   .vehicles-gallery {
     display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 10px;
-    max-width: 800px;
-    margin: 0 auto;
+    justify-content: flex-start;
+    gap: 8px;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    padding-bottom: 10px;
   }
 
   .vehicle-photo {
-    flex: 0 0 22%;
-    height: 150px;
+    flex: 0 0 auto;
+    width: 270px;  /* 3 kat artırıldı */
+    height: 270px; /* 3 kat artırıldı */
+    border-radius: 10px;
+    border: 2px solid #ccc;
     background-size: cover;
     background-position: center;
-    border: 2px solid #ccc;
-    border-radius: 10px;
     box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    cursor: pointer;
+    transition: transform 0.3s ease;
+  }
+  .vehicle-photo:hover {
+    transform: scale(1.05);
   }
 
   footer {
-    margin-top: 50px;
-    font-size: 18px;
+    margin-top: auto;
+    font-size: 16px;
     color: green;
+    text-align: center;
+    padding: 10px 0;
+  }
+
+  /* Modal (Lightbox) stili */
+  #modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0; top: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0,0,0,0.8);
+    justify-content: center;
+    align-items: center;
+  }
+
+  #modal img {
+    max-width: 90vw;
+    max-height: 90vh;
+    border-radius: 15px;
+    box-shadow: 0 0 15px rgba(255,255,255,0.7);
   }
 </style>
 </head>
@@ -108,8 +165,8 @@
 <h1>Bergama Taksi - Geç Taksi</h1>
 
 <a href="tel:+905392742977" class="button phone-button">📞 0539 274 29 77</a>
-<a href="https://wa.me/905392742977" target="_blank" class="button whatsapp-button">💬 WhatsApp ile Mesaj Yaz</a>
-<a href="https://maps.app.goo.gl/Q3y9ASc3f2QeBKLY7" class="map-link" target="_blank">📍 Konumumuzu Gör</a>
+<a href="https://wa.me/905392742977" target="_blank" class="button whatsapp-button">💬 WhatsApp ile Ara</a>
+<a href="https://maps.app.goo.gl/Q3y9ASc3f2QeBKLY7" target="_blank" class="map-link">📍 Konumumuzu Gör</a>
 
 <div class="info-text">
   <h2>Bergama Taksi – 7/24 Güvenli ve Hızlı Ulaşım 🚖</h2>
@@ -129,14 +186,38 @@
 <div class="vehicles-section">
   <h2>Aracımız</h2>
   <div class="vehicles-gallery">
-    <div class="vehicle-photo" style="background-image: url('taksi1.jpg');"></div>
-    <div class="vehicle-photo" style="background-image: url('taksi2.jpg');"></div>
-    <div class="vehicle-photo" style="background-image: url('taksi3.jpg');"></div>
-    <div class="vehicle-photo" style="background-image: url('taksi4.jpg');"></div>
+    <div class="vehicle-photo" style="background-image: url('taksi1.jpg');" data-img="taksi1.jpg"></div>
+    <div class="vehicle-photo" style="background-image: url('taksi2.jpg');" data-img="taksi2.jpg"></div>
+    <div class="vehicle-photo" style="background-image: url('taksi3.jpg');" data-img="taksi3.jpg"></div>
+    <div class="vehicle-photo" style="background-image: url('taksi4.jpg');" data-img="taksi4.jpg"></div>
   </div>
 </div>
 
 <footer>© 2025 Bergama Taksi - Geç Taksi</footer>
+
+<!-- Modal -->
+<div id="modal">
+  <img src="" alt="Büyük Araç Fotoğrafı" />
+</div>
+
+<script>
+  const modal = document.getElementById('modal');
+  const modalImg = modal.querySelector('img');
+  const photos = document.querySelectorAll('.vehicle-photo');
+
+  photos.forEach(photo => {
+    photo.addEventListener('click', () => {
+      const src = photo.getAttribute('data-img');
+      modalImg.src = src;
+      modal.style.display = 'flex';
+    });
+  });
+
+  modal.addEventListener('click', () => {
+    modal.style.display = 'none';
+    modalImg.src = '';
+  });
+</script>
 
 </body>
 </html>
